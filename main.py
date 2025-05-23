@@ -39,11 +39,47 @@ def q3():
 
 
 def q4():
-    pass
+    """A Locadora de Veículos Eudora lançou uma grande promoção esse mês: pagando apenas R$ 90 por diária, o cliente pode alugar um carro de passeio. Para cada diária, 
+    o cliente recebe uma cota de quilometragem de 100 Km. Cada quilômetro a mais custará uma taxa extra de R$ 12.
 
+Escreva um programa que receba como entrada a quantidade de dias e a quilometragem total rodada por um cliente dessa locadora e exiba o valor total a ser pago com duas 
+casas decimais."""
+
+    diaria = int(input("Digite a quantidade de dias: "))
+    quilo = float(input("Digite os quilométros rodados: "))
+
+    quiloExd = 0
+    if(diaria == 0):
+        print("Valor inválido")
+    else:
+        if(diaria * 100 < quilo):
+            quiloExd = quilo - (diaria * 100)
+        
+        total = (diaria * 90) + (quiloExd * 12)
+
+        print(f"{total:.2f}")
+ 
 def q5():
-    pass
+    escala = input("Digite a escala de temperatura: ")
+    temp = float(input(f"Digite o valor da temperatura em °{escala}: "))
+
+    match(escala):
+        case "F":
+            tempC = (temp - 32) / 1.8
+            tempK = (temp - 32) * (5/9) + 273.15
+            print(f"{tempC:.2f} C\n{tempK:.2f} K") 
+        case "C":
+            tempF = temp * 1.8 + 32
+            tempK = temp + 273.15
+            print(f"{tempF:.2f} F\n{tempK:.2f} K")
+        case "K":
+            if(temp < 0):
+                print("Valor de temperatura abaixo do minimo")
+            else:
+                tempC = temp - 273.15
+                tempF = (temp - 273.15) * 1.8 + 32
+                print(f"{tempC:.2f} C\n{tempF:.2f} F")
 
 if __name__=="__main__":
     # teste sua questão manualmente aqui
-    q3()
+    q5()
