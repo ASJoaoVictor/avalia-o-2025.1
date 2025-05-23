@@ -16,7 +16,7 @@ def q2():
         for i in range(1, num+1):
             if(num % i == 0):
                 cont += 1
-        if(0 < cont <= 2):
+        if(1 < cont <= 2):
             print("Primo")
         else:
             print("Não")
@@ -61,7 +61,7 @@ casas decimais."""
  
 def q5():
     escala = input("Digite a escala de temperatura: ")
-    temp = float(input(f"Digite o valor da temperatura em °{escala}: "))
+    temp = float(input(f"Digite o valor da temperatura em {escala}: "))
 
     match(escala):
         case "F":
